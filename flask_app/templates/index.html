@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bid Auction</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Bid Auction</h1>
+        <pre>{{ logo }}</pre>
+        
+        {% if not bidding_finished %}
+	<form method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
+            <br><br>
+
+            <label for="bid">Your Bid:</label>
+            <input type="number" name="bid" id="bid" required>
+            <br><br>
+
+            <input type="submit" value="Submit Bid">
+        </form>
+
+	<form method="POST">
+	    <p> Are there any other bidders?</p>
+	    <input type="radio" id="yes" name="new_bidder" value="y" required>
+	    <label for="yes">Yes</label>
+	    <input type="radio" id="no" name="new_bidder" value="n" required>
+	    <label for="no">No</label>
+ 	    <br><br>
+            <input type="submit" value="Submit">
+
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>
